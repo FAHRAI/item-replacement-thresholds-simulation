@@ -20,3 +20,7 @@ keywords:
   - replacement thresholds
   - equivalence testing
   - simulation
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23027274
+    description: "Raw development, pilot and final records"

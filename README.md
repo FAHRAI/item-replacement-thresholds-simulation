@@ -80,7 +80,7 @@ on an empty `data/` directory; use `--workers` to set the number of processes.
 
 The raw development, pilot and final records (`data/`, 143 MB: one `.npz` file per block with seeds, endpoints and
 per-period values, plus replacement events and a response trace for bundle 0) are archived on Zenodo:
-https://doi.org/10.5281/zenodo.XXXXXXX
+https://doi.org/10.5281/zenodo.23027274
 
 ## Citation
 
