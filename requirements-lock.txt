@@ -1,0 +1,4 @@
+# Environment of the recorded run (Python 3.12, macOS arm64)
+numpy==2.3.5
+matplotlib==3.10.9
+pytest==9.1.1

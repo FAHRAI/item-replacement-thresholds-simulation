@@ -1,0 +1,171 @@
+{
+  "world": {
+    "reserves": [3, 6, 12],
+    "calibration_sizes": [12, 24, 48],
+    "hazards": [0.001, 0.008],
+    "horizon": 30,
+    "rehearsal": 0.25
+  },
+  "modes": {
+    "baseline": {
+      "diagnostic_gain": 0.006,
+      "filter_increment": 0.025
+    },
+    "zero_practice": {
+      "diagnostic_gain": 0.0,
+      "filter_increment": 0.025
+    },
+    "low_filter_increment": {
+      "diagnostic_gain": 0.006,
+      "filter_increment": 0.005
+    }
+  },
+  "policies": ["static", "dynamic"],
+  "seeds": {
+    "development": 770818350,
+    "pilot": 502198539,
+    "final": 3861786219
+  },
+  "development": {
+    "bundles": 128,
+    "z_grid": [
+      0.25, 0.27602237841845306, 0.30475341355111885, 0.3364750481580891, 0.3714985722842371,
+      0.410167678003819, 0.4528618321319533, 0.5, 0.5520447568369061, 0.6095068271022377,
+      0.6729500963161781, 0.7429971445684742, 0.820335356007638, 0.9057236642639066, 1.0,
+      1.0596340226670484, 1.122824261993551, 1.189782789484386, 1.260734323321362,
+      1.335916982535434, 1.415583086153247, 1.5, 1.562930441155813, 1.6285010425943358,
+      1.6968225686164442, 1.768010430487226, 1.8421848813929855, 1.919471219577405, 2.0,
+      2.119268045334097, 2.2456485239871014, 2.379565578968772, 2.5214686466427243,
+      2.6718339650708685, 2.831166172306494, 3.0, 3.1473451902649447, 3.301927248894627,
+      3.464101615137755, 3.634241185664279, 3.8127371719877465, 4.0, 4.279652775734651,
+      4.578856970213327, 4.898979485566356, 5.241482788417794, 5.6079315911044025, 6.0
+    ],
+    "gamma_grid": [0.0, 0.5, 1.0, 2.0, 3.0, 4.0],
+    "z_anchors": [0.25, 0.5, 1.0, 1.5, 2.0, 3.0, 4.0, 6.0],
+    "bootstrap_replicates": 1000,
+    "bootstrap_stream": 1311916597
+  },
+  "pilot": {
+    "bundles": 256
+  },
+  "sample_size": {
+    "minimum": 512,
+    "round_to": 128,
+    "alpha_per_family": 0.05,
+    "half_width": {
+      "A": 0.00025,
+      "C": 0.00025,
+      "D": 0.0005
+    },
+    "tests_per_family": {
+      "A": 2,
+      "C": 6,
+      "D": 2
+    }
+  },
+  "equivalence": {
+    "margin": 0.001,
+    "alpha": 0.025
+  },
+  "contrasts": {
+    "A": [
+      {
+        "id": "dynamic_minus_static",
+        "terms": [
+          ["baseline", "dynamic", null, 1],
+          ["baseline", "static", null, -1]
+        ]
+      }
+    ],
+    "C": [
+      {
+        "id": "dynamic_minus_static_R3",
+        "terms": [
+          ["baseline", "dynamic", 3, 1],
+          ["baseline", "static", 3, -1]
+        ]
+      },
+      {
+        "id": "dynamic_minus_static_R6",
+        "terms": [
+          ["baseline", "dynamic", 6, 1],
+          ["baseline", "static", 6, -1]
+        ]
+      },
+      {
+        "id": "dynamic_minus_static_R12",
+        "terms": [
+          ["baseline", "dynamic", 12, 1],
+          ["baseline", "static", 12, -1]
+        ]
+      },
+      {
+        "id": "reserve_interaction_R3_minus_R6",
+        "terms": [
+          ["baseline", "dynamic", 3, 1],
+          ["baseline", "static", 3, -1],
+          ["baseline", "dynamic", 6, -1],
+          ["baseline", "static", 6, 1]
+        ]
+      },
+      {
+        "id": "reserve_interaction_R3_minus_R12",
+        "terms": [
+          ["baseline", "dynamic", 3, 1],
+          ["baseline", "static", 3, -1],
+          ["baseline", "dynamic", 12, -1],
+          ["baseline", "static", 12, 1]
+        ]
+      },
+      {
+        "id": "reserve_interaction_R6_minus_R12",
+        "terms": [
+          ["baseline", "dynamic", 6, 1],
+          ["baseline", "static", 6, -1],
+          ["baseline", "dynamic", 12, -1],
+          ["baseline", "static", 12, 1]
+        ]
+      }
+    ],
+    "D": [
+      {
+        "id": "dynamic_minus_static_zero_practice",
+        "terms": [
+          ["zero_practice", "dynamic", null, 1],
+          ["zero_practice", "static", null, -1]
+        ]
+      },
+      {
+        "id": "effect_change_zero_practice_minus_baseline",
+        "terms": [
+          ["zero_practice", "dynamic", null, 1],
+          ["zero_practice", "static", null, -1],
+          ["baseline", "dynamic", null, -1],
+          ["baseline", "static", null, 1]
+        ]
+      }
+    ]
+  },
+  "descriptive_contrasts": [
+    {
+      "id": "dynamic_minus_static_low_filter_increment",
+      "terms": [
+        ["low_filter_increment", "dynamic", null, 1],
+        ["low_filter_increment", "static", null, -1]
+      ]
+    },
+    {
+      "id": "effect_change_low_filter_increment_minus_baseline",
+      "terms": [
+        ["low_filter_increment", "dynamic", null, 1],
+        ["low_filter_increment", "static", null, -1],
+        ["baseline", "dynamic", null, -1],
+        ["baseline", "static", null, 1]
+      ]
+    }
+  ],
+  "execution": {
+    "evaluation_block_size": 16,
+    "trace_bundles": [0]
+  }
+}

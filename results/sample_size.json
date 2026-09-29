@@ -1,0 +1,25 @@
+{
+  "pilot_sd": {
+    "dynamic_minus_static": 0.0008947708149165631,
+    "dynamic_minus_static_R3": 0.0016047604326220666,
+    "dynamic_minus_static_R6": 0.0017381484447659581,
+    "dynamic_minus_static_R12": 0.0011980694696497544,
+    "reserve_interaction_R3_minus_R6": 0.0024139762212801274,
+    "reserve_interaction_R3_minus_R12": 0.0019269645057082333,
+    "reserve_interaction_R6_minus_R12": 0.0020855102120517824,
+    "dynamic_minus_static_zero_practice": 0.0008997309932322525,
+    "effect_change_zero_practice_minus_baseline": 0.0007040391412578088
+  },
+  "required": {
+    "dynamic_minus_static": 64.35516306368456,
+    "dynamic_minus_static_R3": 286.79705431072017,
+    "dynamic_minus_static_R6": 336.45578446900174,
+    "dynamic_minus_static_R12": 159.85207323536238,
+    "reserve_interaction_R3_minus_R6": 648.9634630458344,
+    "reserve_interaction_R3_minus_R12": 413.52493413367125,
+    "reserve_interaction_R6_minus_R12": 484.3718689121394,
+    "dynamic_minus_static_zero_practice": 16.26766219353672,
+    "effect_change_zero_practice_minus_baseline": 9.960781020612329
+  },
+  "final_bundles": 768
+}

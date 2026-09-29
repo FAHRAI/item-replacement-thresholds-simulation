@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper and this repository."
+title: "Static and resource-dependent item-replacement thresholds: simulation code and results"
+version: 1.0.0
+date-released: 2026-09-29
+license: MIT
+repository-code: "https://github.com/FAHRAI/item-replacement-thresholds-simulation"
+authors:
+  - family-names: Kholodniak
+    given-names: Oleksandr
+    orcid: "https://orcid.org/0009-0000-1012-7361"
+    affiliation: "National Aerospace University \"Kharkiv Aviation Institute\""
+  - family-names: Prokhorov
+    given-names: Oleksandr
+    orcid: "https://orcid.org/0000-0003-4680-4082"
+    affiliation: "National Aerospace University \"Kharkiv Aviation Institute\""
+keywords:
+  - item-pool maintenance
+  - repeated assessment
+  - replacement thresholds
+  - equivalence testing
+  - simulation
